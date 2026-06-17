@@ -3,7 +3,7 @@ agent any
 stages{
 stage('Checkout'){
 steps{
-git branch:'main', url:'https://github.com/Langerraghav12/webapp2.git'
+git branch:'master', url:'https://github.com/Langerraghav12/webapp2.git'
 }}
 stage('Build'){
 steps{
