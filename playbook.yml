@@ -1,0 +1,15 @@
+---
+- name: Deploy to Tomcat
+  hosts: web
+  become: yes
+  tasks:
+  - name: Copy file to tomcat
+    copy:
+      src: '/var/snap/jenkins/5042/workspace/mwebappp/target/mwaap.war'
+      dest: '/opt/tomcat/webapps/mwaap.war'
+      remote_src: no
+  - name: Restart Tomcat
+    shell: |
+      /opt/tomcat/bin/shutdown.sh
+      /opt/tomcat/bin/startup.sh
+      
